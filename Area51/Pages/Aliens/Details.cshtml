@@ -1,0 +1,55 @@
+﻿@page
+@model Area51.Pages.Aliens.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Alien</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Alien.NickName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alien.NickName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Alien.DateFound)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alien.DateFound)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Alien.Height)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alien.Height)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Alien.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alien.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Alien.colour)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alien.colour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Alien.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alien.description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Alien.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

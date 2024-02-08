@@ -1,0 +1,48 @@
+﻿@page
+@model Area51.Pages.Aliens.AddAlienModel
+@{
+    ViewData["Title"] = "Add Alien - Area51";
+}
+
+<h1>Register an Alien</h1>
+<form method="post">
+    <p>
+        NickName: <input type="text" asp-for="NickName"/>
+    </p>
+    <p>
+        DateFound: <input type="date" asp-for="DateFound" asp-format="{0:yyyy-MM-dd}" /><br />
+    </p>
+    <p>
+        Height: <input type="text" asp-for="Height"/>
+    </p>
+    <p>
+        Weight: <input type="text" asp-for="Weight"/>
+    </p>
+    <p>
+        Colour:
+        <select asp-for="colour">
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Blue">Blue</option>
+        </select>
+    </p>
+    <p>
+        Description: <br />
+        <textarea asp-for="description">
+
+        </textarea>
+    </p>
+    <p>
+        <input type="submit" class="btn btn-primary" asp-page-handler="Validate" value="Validate" />
+        <input type="submit" class="btn btn-primary" asp-page-handler="Submit" value="Submit"/>
+    </p>
+</form>
+@if (Model.Errors == "Validation Error!")
+{
+    <b style="color: red">@Model.Errors</b>
+}
+else if(Model.Errors == "Good to submit!")
+{
+    <b style="color: green">@Model.Errors</b>
+}

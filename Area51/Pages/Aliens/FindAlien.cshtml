@@ -1,0 +1,36 @@
+﻿@page
+@model Area51.Pages.Aliens.FindAlienModel
+@{
+}
+
+<h1>FindAlien</h1>
+<div>
+    <p>
+        Find an alien by searching with the criteria!
+    </p>
+</div>
+<form method="post">
+    NickName: <input type="text" asp-for="Name"/><br />
+    Height Range: <br />
+    Min: <input type="text" asp-for="HeightMin"/>
+    Max: <input type="text" asp-for="HeightMax" /><br />
+    Colour: <input type="text" asp-for="colour" /><br />
+    <p>
+        <input type="submit" class="btn btn-primary" asp-page-handler="FindByNickName" value="Find Alien by nickname!"/>
+        <input type="submit" class="btn btn-primary" asp-page-handler="FindByNickNameAndColour" value="Find Alien by nickname and colour!" />
+        <input type="submit" class="btn btn-primary" asp-page-handler="FindByHeight" value="Find Alien by height!" />
+    </p>
+</form>
+<div>
+    <table class="table-bordered">
+        <thead>
+            <tr><td>Name</td><td>Colour</td><td>Height</td></tr>
+        </thead>
+        <tbody>
+            @foreach(var a in Model.Alien)
+            {
+                <tr><td>@a.NickName</td><td>@a.colour</td><td>@a.Height</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
